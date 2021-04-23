@@ -36,7 +36,7 @@ public class QsSdkPlugin implements FlutterPlugin, MethodCallHandler {
     channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "qs_sdk");
     channel.setMethodCallHandler(this);
 
-    PrintUtils.initPrintUtils(this);
+    PrintUtils.initPrintUtils(flutterPluginBinding.applicationContext);
     intentFilter = new IntentFilter();
 		intentFilter.addAction("com.qs.scancode");
 
